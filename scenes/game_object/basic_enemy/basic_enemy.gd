@@ -2,13 +2,7 @@ extends CharacterBody2D
 
 const MAX_SPEED = 40
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# reference area 2d in basic enemy node
-	# connect to the area entered signal
-	# define callback
-	$Area2D.area_entered.connect(on_area_entered)
+@onready var health_component = $HealthComponent
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +20,3 @@ func get_direction_to_player():
 	
 	return Vector2.ZERO
 
-
-func on_area_entered(other_area: Area2D):
-	# at apropriate time remove node from scene tree and memory
-	queue_free()

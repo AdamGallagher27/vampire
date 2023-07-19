@@ -6,6 +6,8 @@ const MAX_RANGE = 150
 # packed scene type means this node will get a scene as param
 @export var sword_abilty: PackedScene
 
+var damage = 5
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#signals in gd are events in react
@@ -40,11 +42,14 @@ func on_timer_timeout():
 		return
 	
 	# instantiate sword
-	var sword_instance = sword_abilty.instantiate() as Node2D
+	var sword_instance = sword_abilty.instantiate() as SwordAbility
 	
 	# add sword to main
 	# when this happens sword_instance is spawned at the origin of main [0,0]
 	player.get_parent().add_child(sword_instance)
+	
+	sword_instance.hitbox_component.damage = damage
+	
 	sword_instance.global_position = enemies[0].global_position
 	
 	# this randomises the rotation of the vector 
