@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkulkiyvaicd4"]
+[gd_scene load_steps=10 format=3 uid="uid://dkulkiyvaicd4"]
 
 [ext_resource type="PackedScene" uid="uid://kpdc1gac37ee" path="res://scenes/manager/enemy_manager.tscn" id="1_bi46j"]
-[ext_resource type="PackedScene" uid="uid://bfa0mmrlr4d0o" path="res://scenes/game_camera/game_camera.tscn" id="1_eau1a"]
+[ext_resource type="PackedScene" uid="uid://bfa0mmrlr4d0o" path="res://scenes/game_object/game_camera/game_camera.tscn" id="1_eau1a"]
 [ext_resource type="PackedScene" uid="uid://dwij0awovbec5" path="res://scenes/UI/arean_time_ui.tscn" id="1_i8htv"]
 [ext_resource type="TileSet" uid="uid://m3r22ik7dnvw" path="res://resources/tileset.tres" id="1_khxgb"]
-[ext_resource type="PackedScene" uid="uid://dtfomksane7k4" path="res://scenes/player/player.tscn" id="1_svjbr"]
+[ext_resource type="PackedScene" uid="uid://dtfomksane7k4" path="res://scenes/game_object/player/player.tscn" id="1_svjbr"]
 [ext_resource type="PackedScene" uid="uid://c8xj8fvbge3ln" path="res://scenes/manager/arena_time_manager.tscn" id="2_4jwsd"]
-[ext_resource type="PackedScene" uid="uid://b5xd6cld4wqf1" path="res://scenes/basic_enemy/basic_enemy.tscn" id="4_cgymi"]
+[ext_resource type="PackedScene" uid="uid://ci32yatctjrry" path="res://scenes/manager/experience_manager.tscn" id="3_2vgnt"]
+[ext_resource type="PackedScene" uid="uid://b5xd6cld4wqf1" path="res://scenes/game_object/basic_enemy/basic_enemy.tscn" id="4_cgymi"]
+[ext_resource type="PackedScene" uid="uid://dvuwmwoiou3qf" path="res://scenes/game_object/experience_vile/experience_vile.tscn" id="8_osmju"]
 
 [node name="Main" type="Node"]
 
@@ -14,6 +16,8 @@
 arena_time_manager = NodePath("../ArenaTimeManager")
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_4jwsd")]
+
+[node name="ExperienceManager" parent="." instance=ExtResource("3_2vgnt")]
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_bi46j")]
 
@@ -35,3 +39,18 @@ position = Vector2(252, 247)
 
 [node name="basic_enemy3" parent="." instance=ExtResource("4_cgymi")]
 position = Vector2(63, 290)
+
+[node name="ExperienceVile" parent="." instance=ExtResource("8_osmju")]
+position = Vector2(29, 54)
+
+[node name="ExperienceVile2" parent="." instance=ExtResource("8_osmju")]
+position = Vector2(51, 15)
+
+[node name="ExperienceVile3" parent="." instance=ExtResource("8_osmju")]
+position = Vector2(56, 128)
+
+[node name="ExperienceVile4" parent="." instance=ExtResource("8_osmju")]
+position = Vector2(157, 128)
+
+[node name="ExperienceVile5" parent="." instance=ExtResource("8_osmju")]
+position = Vector2(157, 45)
